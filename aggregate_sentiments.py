@@ -20,8 +20,6 @@ for name in names:
                     df.loc[df['CommentID'] == row['ParentCommentID'], 'NumChildren'] += 1
                     df.loc[df['CommentID'] == row['ParentCommentID'], 'AggregatedSentimentValue'] += row['SentimentValue']
 
-            df['AggregatedSentimentValue'] / df['NumChildren']
-
             df.insert(df.columns.get_loc("AggregatedP/NRatio"), "AggregatedPositives", 0)
             df.insert(df.columns.get_loc("AggregatedP/NRatio"), "AggregatedNegatives", 0)
 
